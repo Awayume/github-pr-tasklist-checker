@@ -1,0 +1,10 @@
+name: 'GitHub PR Tasklist Checker'
+description: 'An Action to check if the PR tasklist is complete'
+
+runs:
+  using: 'node16'
+  main: 'dist/index.js'
+
+branding:
+  icon: 'check-square'
+  color: 'green'
