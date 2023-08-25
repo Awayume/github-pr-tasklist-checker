@@ -1,0 +1,47 @@
+name: Build
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - 'main'
+    paths:
+      - '.github/**'
+      - 'src/**'
+      - 'package-lock.json'
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - name: Cache node_modules
+        uses: actions/cache@v3
+        with:
+          path: 'node_modules'
+          key: node-${{ hashFiles('package-lock.json') }}
+          restore-keys: node-
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16.x'
+      - name: build action
+        run: |
+          git config --global user.email "action@github.com"
+          git config --global user.name "Github Actions"
+          git fetch origin build
+          git switch build
+          git rebase main
+          npm install
+          npm run build
+      - name: Push to GitHub
+        uses: EndBug/add-and-commit@v9.1.1
+        with:
+          add: '-f ./dist'
+          author_name: 'GitHub Actions'
+          author_email: 'action@github.com'
+          message: ':fireworks: Clean sandbox'
