@@ -14,6 +14,7 @@ const comment_regex = /<!--.*-->/;
 const options_regex = /<!--- +.+ +--->/;
 const options_start = '<!---';
 const options_end = '--->';
+const message_sign = '​  ​​​​​​​​ ​​​​​​​';
 
 
 class Task {
@@ -48,8 +49,10 @@ class Task {
 };
 
 
-const run = () => {
+const run = async () => {
   const context = github.context;
+  const github_token = process.env.GITHUB_TOKEN;
+  const octokit = github.getOctokit(github_token);
 
   // Event check
   if (context.eventName !== 'pull_request') {
@@ -202,12 +205,44 @@ const run = () => {
     };
   };
 
+  const comments = (await octokit.rest.issues.listComments({
+    owner: context.repo.owner,
+    repo: context.repo.repo,
+    issue_number: context.issue.number,
+  })).data;
+  const previous_comment = comments.filter(comment => comment.endsWith(comment_sign))[0];
+
   if (!message.length) {
     core.info('All tasks are completed. Great!');
+    if (previous_comment) {
+      await octokit.rest.issues.deleteComment({
+        owner: context.repo.owner,
+        repo: context.repo.repo,
+        comment_id: previous_comment.id,
+      });
+    };
+    process.exit(0);
   } else {
     message.split('\n').forEach(line => {
       core.error(line);
     });
+
+    if (comments.length && previous_comment) {
+      await octokit.rest.issues.updateComment({
+        owner: context.repo.owner,
+        repo: context.repo.repo,
+        comment_id: previous_comment.id,
+        body: message.trim() + message_sign,
+      });
+    } else {
+      await octokit.rest.issues.createComment({
+        owner: context.repo.owner,
+        repo: context.repo.repo,
+        issue_number: context.issue.number,
+        body: message.trim() + message_sign,
+      });
+    };
+
     throw new Error('Some tasks are not completed.');
   };
 };
@@ -247,6 +282,27 @@ try {
               + '- [ ] <!--- Choice#4,multiple ---> task6-2\n'
           },
         },
+        repo: {
+          owner: 'Awayume',
+          repo: 'github-pr-tasklist-checker',
+        },
+        issue: {
+          number: 0,
+        },
+      };
+      github.getOctokit = () => {
+        return {
+          rest: {
+            issues: {
+              listComments: async () => {
+                return {
+                  data: [],
+                };
+              },
+              createComment: async () => {},
+            },
+          },
+        };
       };
       run();
     } catch (err) {
