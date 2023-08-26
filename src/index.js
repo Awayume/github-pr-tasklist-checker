@@ -11,9 +11,9 @@ const base_regex = /- +\[.] +/;
 const checked_regex = /- +\[x] +.+/;
 const choice_regex = /Choice(#.+)?/;
 const comment_regex = /<!--.*-->/;
-const options_regex = /<!--- +.+ +--->/;
-const options_start = '<!---';
-const options_end = '--->';
+const options_regex = /<!-- +.+ +-->/;
+const options_start = '<!--';
+const options_end = '-->';
 const message_sign = '​  ​​​​​​​​ ​​​​​​​';
 
 
@@ -263,23 +263,23 @@ try {
               + 'This is a PR!\n'
               + '## Checklist\n'
               + '- [ ] task1\n'
-              + '- [ ] <!--- Optional ---> task2\n'
-              + '  - [ ] <!--- Optional --->  task2-child1\n'
+              + '- [ ] <!-- Optional --> task2\n'
+              + '  - [ ] <!-- Optional -->  task2-child1\n'
               + '  - [ ] task2-child2\n'
               + '    - [ ] task2-grandchild1\n'
               + '      - [ ] task2-great-grandchild\n'
               + '    - [ ] task2-grandchild2\n'
               + '- [ ] task3\n'
-              + '  - [ ] <!--- Choice#1 ---> task3-child1\n'
+              + '  - [ ] <!-- Choice#1 --> task3-child1\n'
               + '    - [ ] task3-grandchild1\n'
-              + '  - [ ] <!--- Choice#1 --->  task3-child2\n'
+              + '  - [ ] <!-- Choice#1 -->  task3-child2\n'
               + '    - [ ] task3-grandchild2\n'
-              + '- [ ] <!--- Choice#2 ---> task4-1\n'
-              + '- [ ] <!--- Choice#2 ---> task4-2\n'
-              + '- [ ] <!--- Optional,Choice#3 ---> task5-1\n'
-              + '- [ ] <!--- Optional,Choice#3 ---> task5-2\n'
-              + '- [ ] <!--- Choice#4,multiple ---> task6-1\n'
-              + '- [ ] <!--- Choice#4,multiple ---> task6-2\n'
+              + '- [ ] <!-- Choice#2 --> task4-1\n'
+              + '- [ ] <!-- Choice#2 --> task4-2\n'
+              + '- [ ] <!-- Optional,Choice#3 --> task5-1\n'
+              + '- [ ] <!-- Optional,Choice#3 --> task5-2\n'
+              + '- [ ] <!-- Choice#4,multiple --> task6-1\n'
+              + '- [ ] <!-- Choice#4,multiple --> task6-2\n'
           },
         },
         repo: {
