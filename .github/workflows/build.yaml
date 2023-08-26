@@ -5,9 +5,13 @@ on:
     branches:
       - 'main'
     paths:
-      - '.github/**'
+      - '.github/workflows/**'
       - 'src/**'
+      - 'action.yaml'
       - 'package-lock.json'
+
+permissions:
+  contents: write
 
 jobs:
   build:
