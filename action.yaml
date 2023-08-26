@@ -1,9 +1,6 @@
 name: 'GitHub PR Tasklist Checker'
 description: 'An Action to check if the PR tasklist is complete'
 
-permissions:
-  contents: write
-
 runs:
   using: 'node16'
   main: 'dist/index.js'
