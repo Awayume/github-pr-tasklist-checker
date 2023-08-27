@@ -39,7 +39,7 @@ jobs:
           git config --global user.name "Github Actions"
           git fetch origin build
           git switch build
-          git rebase main
+          git merge main
           npm install
           npm run build
       - name: Push to GitHub
