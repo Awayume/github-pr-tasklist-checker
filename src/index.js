@@ -51,7 +51,7 @@ class Task {
 
 const run = async () => {
   const context = github.context;
-  const github_token = process.env.GITHUB_TOKEN;
+  const github_token = core.getInput('github_token');
   const octokit = github.getOctokit(github_token);
 
   // Event check

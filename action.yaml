@@ -1,6 +1,12 @@
 name: 'GitHub PR Tasklist Checker'
 description: 'An Action to check if the PR tasklist is complete'
 
+inputs:
+  github_token:
+    description: Token with issue write permission. Do not specify this.
+    required: false
+    default: ${{ github.token }}
+
 runs:
   using: 'node16'
   main: 'dist/index.js'
