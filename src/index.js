@@ -210,7 +210,7 @@ const run = async () => {
     repo: context.repo.repo,
     issue_number: context.issue.number,
   })).data;
-  const previous_comment = comments.filter(comment => comment.endsWith(message_sign))[0];
+  const previous_comment = comments.filter(comment => comment.body.endsWith(message_sign))[0];
 
   if (!message.length) {
     core.info('All tasks are completed. Great!');
