@@ -49,6 +49,27 @@ class Task {
 };
 
 
+const maybe_forbidden = async (func, ...args) => {
+  try {
+    return await func(...args);
+  } catch (err) {
+    switch (err.name) {
+      case 'HttpError':
+        if (err.status === 403) {
+          throw new Error(
+              'Action cannot continue due to permission error.\n'
+            + 'You have to grant write permission to Pull Requests.\n'
+            + 'See https://docs.github.com/en/actions/using-jobs/assigning-permissions-to-jobs'
+          );
+        }
+
+      default:
+        throw err;
+    };
+  }
+};
+
+
 const run = async () => {
   const context = github.context;
   const github_token = core.getInput('github_token');
