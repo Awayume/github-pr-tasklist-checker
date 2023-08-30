@@ -88,7 +88,7 @@ if (process.env.DEBUG) {
       process.exit(0);
     } else {
       message.split('\n').forEach(line => {
-        core.error(line);
+        core.info(line);
       });
 
       throw new Error('Some tasks are not completed.');
