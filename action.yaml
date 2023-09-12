@@ -1,5 +1,5 @@
 name: 'GitHub PR Tasklist Checker'
-description: 'An Action to check if the PR tasklist is complete'
+description: 'An Action to check if the PR task list is complete.'
 
 inputs:
   github_token:

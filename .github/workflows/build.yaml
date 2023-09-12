@@ -1,6 +1,12 @@
 name: Build
 on:
   workflow_dispatch:
+    inputs:
+      release:
+        description: 'Create a release build'
+        required: false
+        type: boolean
+
   push:
     branches:
       - 'main'
@@ -10,13 +16,12 @@ on:
       - 'action.yaml'
       - 'package-lock.json'
 
-permissions:
-  contents: write
-
 jobs:
   build:
     name: Build
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -33,7 +38,13 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: '16.x'
-      - name: build action
+      - name: Create release build
+        if: ${{ inputs.release }}
+        run: |
+          npm install
+          npm run build
+      - name: Create debug build
+        if: ${{ !inputs.release }}
         run: |
           git config --global user.email "action@github.com"
           git config --global user.name "Github Actions"
@@ -48,4 +59,4 @@ jobs:
           add: '-f ./dist'
           author_name: 'GitHub Actions'
           author_email: 'action@github.com'
-          message: ':fireworks: Clean sandbox'
+          message: 'build: Build action'
