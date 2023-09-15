@@ -9876,7 +9876,7 @@ module.exports = Object.freeze({
 
 
 const base_regex = /- +\[.] +/;
-const checked_regex = /- +\[x] +.+/;
+const checked_regex = /- +\[x] +.+/i;
 const choice_regex = /Choice(#.+)?/;
 const comment_regex = /<!--.*-->/;
 const options_regex = /<!-- +.+ +-->/;
