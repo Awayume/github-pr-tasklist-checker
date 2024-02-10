@@ -59,4 +59,4 @@ jobs:
           add: '-f ./dist'
           author_name: 'GitHub Actions'
           author_email: 'action@github.com'
-          message: 'build: Build action'
+          message: ':rocket: Build action'
