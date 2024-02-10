@@ -1,6 +1,8 @@
 # GitHub PR Tasklist Checker
 An Action to check if the Pull Request task list is complete.
 
+このドキュメントの日本語版は[こちら](https://github.com/Awayume/github-pr-tasklist-checker/blob/main/README_ja.md)
+
 ## Features
 This Action gives you more control over the tasks in the Pull Requests.  
 If there are unchecked tasks, the action will fail and the missing checks will be noted in the comments.
