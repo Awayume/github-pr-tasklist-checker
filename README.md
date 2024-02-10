@@ -1,9 +1,9 @@
 # GitHub PR Tasklist Checker
-An Action to check if the PR task list is complete.
+An Action to check if the Pull Request task list is complete.
 
 ## Features
-This Action gives you more control over your pull request task list.  
-Also, when a check is missing, this not only causes the Action to fail, but also points it out in the comments.
+This Action gives you more control over the tasks in the Pull Requests.  
+If there are unchecked tasks, the action will fail and the missing checks will be noted in the comments.
 
 <details>
 <summary>Screenshots</summary>
@@ -16,8 +16,7 @@ Also, when a check is missing, this not only causes the Action to fail, but also
 </details>
 
 ## How to use
-I recommend creating a Pull Request template.  
-In it, write the tasks you want contributors to check.
+Create a Pull Request template and write the tasks you want contributors to check off in it.
 
 ### About permission
 This Action requires write permission to Pull Requests.  
@@ -59,13 +58,13 @@ When specifying multiple options, separate them with commas.
 
 ##### Options
 - Optional
-Make it an optional task
+Marks it an optional task
 ```markdown
 - [ ] <!-- Optional --> Task title
 ```
 
 - Choice
-Create choices.
+Creates choices.
 ```markdown
 - [ ] <!-- Choice --> Task title
 - [ ] <!-- Choice --> Task title
@@ -80,7 +79,7 @@ When asking several questions, you must specify an ID.
 ```
 
   - multiple
-  Allow to choose more than one.
+  Allows to choose more than one.
   ```markdown
   - [ ] <!-- Choice,multiple --> Task title
   - [ ] <!-- Choice,multiple --> Task title
