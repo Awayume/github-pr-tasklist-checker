@@ -1,7 +1,7 @@
 # GitHub PR Tasklist Checker
 An Action to check if the Pull Request task list is complete.
 
-このドキュメントの日本語版は[こちら](https://github.com/Awayume/github-pr-tasklist-checker/blob/main/README_ja.md)
+このドキュメントの日本語版は[こちら](README_ja.md)
 
 ## Features
 This Action gives you more control over the tasks in the Pull Requests.  
@@ -9,12 +9,13 @@ If there are unchecked tasks, the action will fail and the missing checks will b
 
 <details>
 <summary>Screenshots</summary>
-<img src="https://github.com/Awayume/github-pr-tasklist-checker/assets/79361022/e4ab44a2-3a8f-4612-b6b5-f55f7cd7ba5a">
-<img src="https://github.com/Awayume/github-pr-tasklist-checker/assets/79361022/469ed1df-84f1-47d3-abbc-a28ffbb29220">
-<img src="https://github.com/Awayume/github-pr-tasklist-checker/assets/79361022/55710b34-6d4b-4b74-b8b5-e771db102451">
-<img src="https://github.com/Awayume/github-pr-tasklist-checker/assets/79361022/834e89ad-a7f7-4f3d-a42f-2ccf7888d1f3">
-<img src="https://github.com/Awayume/github-pr-tasklist-checker/assets/79361022/87c5d4a2-62ee-4407-bb33-a50a6b2b5438">
-<img src="https://github.com/Awayume/github-pr-tasklist-checker/assets/79361022/c77715f1-eed8-484a-a858-ce69670903eb">
+
+[![](https://github.com/Awayume/github-pr-tasklist-checker/assets/79361022/e4ab44a2-3a8f-4612-b6b5-f55f7cd7ba5a)](#)
+[![](https://github.com/Awayume/github-pr-tasklist-checker/assets/79361022/469ed1df-84f1-47d3-abbc-a28ffbb29220)](#)
+[![](https://github.com/Awayume/github-pr-tasklist-checker/assets/79361022/55710b34-6d4b-4b74-b8b5-e771db102451)](#)
+[![](https://github.com/Awayume/github-pr-tasklist-checker/assets/79361022/834e89ad-a7f7-4f3d-a42f-2ccf7888d1f3)](#)
+[![](https://github.com/Awayume/github-pr-tasklist-checker/assets/79361022/87c5d4a2-62ee-4407-bb33-a50a6b2b5438)](#)
+[![](https://github.com/Awayume/github-pr-tasklist-checker/assets/79361022/c77715f1-eed8-484a-a858-ce69670903eb)](#)
 </details>
 
 ## How to use
