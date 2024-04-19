@@ -39,12 +39,12 @@ jobs:
         with:
           node-version: '20.x'
       - name: Create release build
-        if: inputs.release
+        if: ${{ inputs.release }}
         run: |
           npm install
           npm run build
       - name: Create debug build
-        if: ! inputs.release
+        if: ${{ !inputs.release }}
         run: |
           git config --global user.email "action@github.com"
           git config --global user.name "Github Actions"
