@@ -55,38 +55,57 @@ This is the basic syntax. It follows the basics of a regular markdown checklist.
 It doesn't matter if there are no options.
 When specifying multiple options, separate them with commas.
 ```markdown
-- [ ] Task title
-- [ ] <!-- (Options) --> Task title
+- [ ] Task content
+- [ ] <!-- (Options) --> Task content
 ```
 
 ##### Options
 - Optional
 Marks it an optional task
 ```markdown
-- [ ] <!-- Optional --> Task title
+- [ ] <!-- Optional --> Task content
 ```
 
 - Choice
 Creates choices.
 ```markdown
-- [ ] <!-- Choice --> Task title
-- [ ] <!-- Choice --> Task title
+- [ ] <!-- Choice --> Task content
+- [ ] <!-- Choice --> Task content
 ```
 When asking several questions, you must specify an ID.
 ```markdown
-- [ ] <!-- Choice#1 --> Task title
-- [ ] <!-- Choice#1 --> Task title
+- [ ] <!-- Choice#1 --> Task content
+- [ ] <!-- Choice#1 --> Task content
 
-- [ ] <!-- Choice#2 --> Task title
-- [ ] <!-- Choice#2 --> Task title
+- [ ] <!-- Choice#2 --> Task content
+- [ ] <!-- Choice#2 --> Task content
 ```
 
   - multiple
   Allows to choose more than one.
   ```markdown
-  - [ ] <!-- Choice,multiple --> Task title
-  - [ ] <!-- Choice,multiple --> Task title
+  - [ ] <!-- Choice,multiple --> Task content
+  - [ ] <!-- Choice,multiple --> Task content
   ```
+
+##### Child Tasks
+For each task, child tasks can be defined.
+A child task is validated only if it is checked if the parent task is optional or optional.
+```markdown
+- [ ] Parent Task 1
+ - [ ] Child task 1
+ - [ ] Child task 2
+ - [ ] Subtasks.
+
+- [ ] <! -- Optional --> Parent Task 2
+ - [ ] Validated only when "Parent Task 2" is checked.
+````
+Child tasks can be defined by creating indents. The depth of indentation must be the same.
+````markdown
+- [ ] Parent task
+ - [ ] Child tasks
+ - [ ] Syntax error occurred.
+```
 
 #### Tag Policy
 Tags always start with 'v' and refer to the version. Those tags are always immutable.  
