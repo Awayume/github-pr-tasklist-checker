@@ -8,8 +8,8 @@ on:
         type: boolean
 
   push:
-    branches:
-      - 'main'
+    branches-ignore:
+      - 'build'
     paths:
       - '.github/workflows/**'
       - 'src/**'
