@@ -50,7 +50,7 @@ jobs:
           git config --global user.name "Github Actions"
           git fetch origin build
           git switch build
-          git merge main
+          git merge ${GITHUB_REF#refs/heads/}
           npm install
           npm run build
       - name: Push to GitHub
