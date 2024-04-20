@@ -8,12 +8,12 @@ Pull Requestのタスクが完了しているかチェックするためのActio
 <details>
 <summary>スクリーンショット</summary>
 
-[![](https://github.com/Awayume/github-pr-tasklist-checker/assets/79361022/e4ab44a2-3a8f-4612-b6b5-f55f7cd7ba5a)](#)
-[![](https://github.com/Awayume/github-pr-tasklist-checker/assets/79361022/469ed1df-84f1-47d3-abbc-a28ffbb29220)](#)
-[![](https://github.com/Awayume/github-pr-tasklist-checker/assets/79361022/55710b34-6d4b-4b74-b8b5-e771db102451)](#)
-[![](https://github.com/Awayume/github-pr-tasklist-checker/assets/79361022/834e89ad-a7f7-4f3d-a42f-2ccf7888d1f3)](#)
-[![](https://github.com/Awayume/github-pr-tasklist-checker/assets/79361022/87c5d4a2-62ee-4407-bb33-a50a6b2b5438)](#)
-[![](https://github.com/Awayume/github-pr-tasklist-checker/assets/79361022/c77715f1-eed8-484a-a858-ce69670903eb)](#)
+[![](https://github.com/Awayume/github-pr-tasklist-checker/assets/79361022/e5e79c5c-3054-424d-b895-f9e260e8bfcd)](#)
+[![](https://github.com/Awayume/github-pr-tasklist-checker/assets/79361022/ca85fc0b-e34f-4284-9ea2-38c8870c8fb7)](#)
+[![](https://github.com/Awayume/github-pr-tasklist-checker/assets/79361022/d19f6b77-b2be-4058-a5fe-02116163f362)](#)
+[![](https://github.com/Awayume/github-pr-tasklist-checker/assets/79361022/157eb787-933d-4361-a6d7-82d55fb0778e)](#)
+[![](https://github.com/Awayume/github-pr-tasklist-checker/assets/79361022/6f8a9fcb-dea6-4b35-89ef-1267440fb5df)](#)
+[![](https://github.com/Awayume/github-pr-tasklist-checker/assets/79361022/054955d8-01ea-4dc7-846d-9d861e955aed)](#)
 </details>
 
 ## 使い方
