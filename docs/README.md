@@ -1,7 +1,7 @@
 # GitHub PR Tasklist Checker
 An Action to check if the Pull Request task list is complete.
 
-このドキュメントの日本語版は[こちら](README_ja.md)
+このドキュメントの日本語版は[こちら](/docs/README_ja.md)
 
 ## Features
 This Action gives you more control over the tasks in the Pull Requests.  
