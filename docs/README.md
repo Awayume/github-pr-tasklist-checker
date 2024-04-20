@@ -100,9 +100,9 @@ A child task is validated only if it is checked if the parent task is optional o
 
 - [ ] <! -- Optional --> Parent Task 2
  - [ ] Validated only when "Parent Task 2" is checked.
-````
+```
 Child tasks can be defined by creating indents. The depth of indentation must be the same.
-````markdown
+```markdown
 - [ ] Parent task
  - [ ] Child tasks
  - [ ] Syntax error occurred.
