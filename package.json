@@ -1,6 +1,6 @@
 {
   "name": "github-pr-tasklist-checker",
-  "version": "1.0.0",
+  "version": "1.2.0",
   "description": "An Action to check if the PR tasklist is complete.",
   "main": "src/index.js",
   "scripts": {
@@ -20,12 +20,12 @@
   "homepage": "https://github.com/Awayume/github-pr-tasklist-checker#readme",
   "dependencies": {
     "@actions/core": "^1.10.0",
-    "@actions/github": "^5.1.1"
+    "@actions/github": "^6.0.0"
   },
   "devDependencies": {
     "@vercel/ncc": "^0.36.1"
   },
   "engines": {
-    "node": "16.x"
+    "node": "20.x"
   }
 }
