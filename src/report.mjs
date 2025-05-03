@@ -1,15 +1,13 @@
-// SPDX-FileCopyrightText: 2023 Awayume <dev@awayume.jp>
+// SPDX-FileCopyrightText: 2023-2025 Awayume <dev@awayume.jp>
 // SPDX-License-Identifier: MIT
 
-'use strict';
-
-const { getOctokit, maybeForbidden } = require('./utils');
+import { getOctokit, maybeForbidden } from './utils.mjs';
 
 
 const message_sign = '​  ​​​​​​​​ ​​​​​​​';
 
 
-const send = async (context, message) => {
+export async function send(context, message) {
   const octokit = getOctokit(context);
 
   const comments = (await maybeForbidden(
@@ -57,8 +55,3 @@ const send = async (context, message) => {
     };
   };
 };
-
-
-module.exports = Object.freeze({
-  send,
-});

@@ -1,12 +1,10 @@
-// SPDX-FileCopyrightText: 2025 Awayume <dev@awayume.jp>
+// SPDX-FileCopyrightText: 2023-2025 Awayume <dev@awayume.jp>
 // SPDX-License-Identifier: MIT
 
-'use strict';
-
-const { base_regex, Task } = require('./task');
+import { base_regex, Task } from './task.mjs';
 
 
-const parse = pr_body => {
+export function parse(pr_body) {
   // Parse PR body
   const tasklist = [];
   let idt_unit = undefined;
@@ -154,8 +152,3 @@ const parse = pr_body => {
 
   return message;
 };
-
-
-module.exports = Object.freeze({
-  parse,
-});

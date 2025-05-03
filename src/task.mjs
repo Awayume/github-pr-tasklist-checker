@@ -1,9 +1,7 @@
-// SPDX-FileCopyrightText: 2023 Awayume <dev@awayume.jp>
+// SPDX-FileCopyrightText: 2023-2025 Awayume <dev@awayume.jp>
 // SPDX-License-Identifier: MIT
 
-'use strict';
-
-const base_regex = /- +\[.] +/;
+export const base_regex = /- +\[.] +/;
 const checked_regex = /- +\[x] +.+/i;
 const choice_regex = /Choice(#.+)?/;
 const comment_regex = /<!--.*-->/;
@@ -12,7 +10,7 @@ const options_start = '<!--';
 const options_end = '-->';
 
 
-class Task {
+export class Task {
   constructor(line) {
     line = line.trim();
 
@@ -42,9 +40,3 @@ class Task {
     this.children = [];
   };
 };
-
-
-module.exports = Object.freeze({
-  base_regex,
-  Task,
-});
