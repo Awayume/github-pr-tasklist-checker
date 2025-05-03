@@ -51,10 +51,10 @@ const parse = pr_body => {
       };
 
       previous_idt = idt;
-    } else if (line.includes('<!--')) {
-      in_comment = true;
     } else if (line.includes('-->')) {
       in_comment = false;
+    } else if (line.includes('<!--')) {
+      in_comment = true;
     }
   });
 
