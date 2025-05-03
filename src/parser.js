@@ -1,4 +1,4 @@
-// SPDX-FileCopyrightText: 2023 Awayume <dev@awayume.jp>
+// SPDX-FileCopyrightText: 2025 Awayume <dev@awayume.jp>
 // SPDX-License-Identifier: MIT
 
 'use strict';
@@ -13,8 +13,9 @@ const parse = pr_body => {
   let previous_idt = 0;
   let parents = [];
   let idx = 0;
+  let in_comment = false;
   pr_body.split('\n').forEach(line => {
-    if (base_regex.test(line)) {
+    if (!in_comment && base_regex.test(line)) {
       let idt = line.match(/^ */)?.[0].length;
       if (idt && !idt_unit) {
         idt_unit = idt;
@@ -50,7 +51,11 @@ const parse = pr_body => {
       };
 
       previous_idt = idt;
-    };
+    } else if (line.includes('-->')) {
+      in_comment = false;
+    } else if (line.includes('<!--')) {
+      in_comment = true;
+    }
   });
 
   // Check
