@@ -1,13 +1,11 @@
-// SPDX-FileCopyrightText: 2023 Awayume <dev@awayume.jp>
+// SPDX-FileCopyrightText: 2023-2025 Awayume <dev@awayume.jp>
 // SPDX-License-Identifier: MIT
 
-'use strict';
+import core from '@actions/core';
+import github from '@actions/github';
 
-const core = require('@actions/core');
-const github = require('@actions/github');
-
-const parser = require('./parser');
-const report = require('./report');
+import { parse } from './parser.mjs';
+import { send } from './report.mjs';
 
 
 // For debugging
@@ -79,9 +77,9 @@ if (process.env.DEBUG) {
     // Get PR body
     const pr_body = context.payload.pull_request.body;
     // Parse PR
-    const message = parser.parse(pr_body);
+    const message = parse(pr_body);
     // Send a report
-    await report.send(context, message);
+    await send(context, message);
 
     if (!message.length) {
       core.info('All tasks are completed. Great!');

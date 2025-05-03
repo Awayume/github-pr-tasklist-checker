@@ -1,14 +1,12 @@
-// SPDX-FileCopyrightText: 2023 Awayume <dev@awayume.jp>
+// SPDX-FileCopyrightText: 2023-2025 Awayume <dev@awayume.jp>
 // SPDX-License-Identifier: MIT
 
-'use strict';
-
-const github = require('@actions/github');
+import github from '@actions/github';
 
 
 let octokit = undefined;
 
-const getOctokit = (context) => {
+export function getOctokit(context) {
   if (!octokit) {
     octokit = github.getOctokit(context.token);
     Object.freeze(octokit);
@@ -17,7 +15,7 @@ const getOctokit = (context) => {
 };
 
 
-const maybeForbidden = async (func, ...args) => {
+export async function maybeForbidden(func, ...args) {
   try {
     return await func(...args);
   } catch (err) {
@@ -36,9 +34,3 @@ const maybeForbidden = async (func, ...args) => {
     };
   }
 };
-
-
-module.exports = Object.freeze({
-  getOctokit,
-  maybeForbidden,
-});
