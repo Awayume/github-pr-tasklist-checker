@@ -1,14 +1,15 @@
 // SPDX-FileCopyrightText: 2023-2025 Awayume <dev@awayume.jp>
 // SPDX-License-Identifier: MIT
 
-import { getOctokit, maybeForbidden } from './utils.mjs';
+import github from '@actions/github';
+import { maybeForbidden } from './utils.mjs';
 
 
 const message_sign = '​  ​​​​​​​​ ​​​​​​​';
 
 
 export async function send(context, message) {
-  const octokit = getOctokit(context);
+  const octokit = github.getOctokit(context.token);
 
   const comments = (await maybeForbidden(
     octokit.rest.issues.listComments,
