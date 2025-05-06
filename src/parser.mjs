@@ -1,5 +1,5 @@
 // SPDX-FileCopyrightText: 2023-2025 Awayume <dev@awayume.jp>
-// SPDX-License-Identifier: MIT
+// SPDX-License-Identifier: AGPL-3.0-only LicenseRef-MIT-previous
 
 import { base_regex, Task } from './task.mjs';
 
