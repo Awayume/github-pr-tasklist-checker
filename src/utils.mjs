@@ -1,20 +1,6 @@
 // SPDX-FileCopyrightText: 2023-2025 Awayume <dev@awayume.jp>
 // SPDX-License-Identifier: MIT
 
-import github from '@actions/github';
-
-
-let octokit = undefined;
-
-export function getOctokit(context) {
-  if (!octokit) {
-    octokit = github.getOctokit(context.token);
-    Object.freeze(octokit);
-  };
-  return octokit;
-};
-
-
 export async function maybeForbidden(func, ...args) {
   try {
     return await func(...args);
