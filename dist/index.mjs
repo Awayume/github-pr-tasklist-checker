@@ -31163,20 +31163,6 @@ function parse(pr_body) {
 // SPDX-FileCopyrightText: 2023-2025 Awayume <dev@awayume.jp>
 // SPDX-License-Identifier: MIT
 
-
-
-
-let octokit = undefined;
-
-function getOctokit(context) {
-  if (!octokit) {
-    octokit = github.getOctokit(context.token);
-    Object.freeze(octokit);
-  };
-  return octokit;
-};
-
-
 async function maybeForbidden(func, ...args) {
   try {
     return await func(...args);
@@ -31204,11 +31190,12 @@ async function maybeForbidden(func, ...args) {
 
 
 
+
 const message_sign = '​  ​​​​​​​​ ​​​​​​​';
 
 
 async function send(context, message) {
-  const octokit = getOctokit(context);
+  const octokit = github.getOctokit(context.token);
 
   const comments = (await maybeForbidden(
     octokit.rest.issues.listComments,
